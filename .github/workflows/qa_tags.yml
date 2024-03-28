@@ -117,9 +117,11 @@ jobs:
     steps:
       - name: Set up Environment Variables
         run: |
-          echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}" >> $GITHUB_ENV
-      - name: Display BOT_ACCESS_TOKEN
-        run: echo $BOT_TOKEN
+          echo "BOT_TOKEN=${{ secrets.BOT_TOKEN }}"
+          echo "Current environment variables:"
+          printenv
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
