@@ -155,7 +155,7 @@ jobs:
 
       - name: Push Git Tag
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }} 
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }} 
           
       
         run: |
