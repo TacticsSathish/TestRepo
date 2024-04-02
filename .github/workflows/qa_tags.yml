@@ -160,7 +160,7 @@ jobs:
           git config user.name "Abisheck2002"
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG         
-          echo "BOT_TOKEN:$BOT_TOKEN"
+          echo "BOT_TOKEN:${{secrets.BOT_TOKEN2}}"
           git push origin --tags --follow-tags -u Abisheck2002:$BOT_TOKEN
         env:
           BOT_TOKEN: ${{secrets.BOT_TOKEN2}} 
