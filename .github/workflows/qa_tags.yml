@@ -153,10 +153,9 @@ jobs:
           echo "Generated new tag: $NEW_TAG"
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
       - name: Hello world action
-        with: # Set the secret as an input
+        with: 
           BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
-        run: |
-          echo "BOT_TOKEN=$BOT_TOKEN" 
+        run:  echo "BOT_TOKEN=$BOT_TOKEN" 
       - name: Tell me a secret!
         run: echo "My existing secret is ${{ secrets.BOT_TOKEN }}"      
       - name: Push Git Tag
