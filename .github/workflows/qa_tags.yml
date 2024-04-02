@@ -159,5 +159,5 @@ jobs:
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG         
           git push origin $NEW_TAG
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}             
+        # env:
+        #   BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}             
