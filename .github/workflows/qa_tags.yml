@@ -165,7 +165,7 @@ jobs:
           git tag $NEW_TAG         
           echo "BOT_TOKEN:${{ secrets.BOT_TOKEN2 }}"
           # git push origin $NEW_TAG
-          git push origin $NEW_TAG --tags -u Abisheck2002:${BOT_TOKEN}
+          git push origin $NEW_TAG --tags -u Abisheck2002:$BOT_TOKEN
 
          
                   
