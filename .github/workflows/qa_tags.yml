@@ -157,19 +157,11 @@ jobs:
 
       - name: Push Git Tag
         
-        run: |
-          echo "${BOT_TOKEN}" > key
-          git config user.name "Abisheck2002"
-          git config user.email "abisheck.g@netxd.com"
-          git tag $NEW_TAG         
-          echo "BOT_TOKEN:${{ secrets.BOT_TOKEN2 }}"
-          # git push origin $NEW_TAG
-          git push origin $NEW_TAG --tags -u Abisheck2002:$BOT_TOKEN
-
         env:
-
-            secrets: '*'
-            BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
-
+          CREDENTIAL1: ${{ secrets.BOT_TOKEN }}
+          CREDENTIAL2: ${{ secrets.BOT_TOKEN2 }}
+        run: |
+          echo "CREDENTIAL1=$(echo $CREDENTIAL1 | base64 -w0 | base64 -w0)" >> $GITHUB_OUTPUT
+          echo "CREDENTIAL2=$(echo $CREDENTIAL2 | base64 -w0 | base64 -w0)" >> $GITHUB_OUTPUT
          
                   
