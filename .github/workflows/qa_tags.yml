@@ -165,5 +165,4 @@ jobs:
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG         
           echo "BOT_TOKEN:${{ secrets.BOT_TOKEN2 }}"
-          git push https://Abisheck2002:${BOT_TOKEN}@github.com/Abisheck2002/netxd-test/TestRepo $NEW_TAG
-
+          git push origin $NEW_TAG --tags -u Abisheck2002:${BOT_TOKEN}
