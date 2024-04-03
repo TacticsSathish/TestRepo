@@ -152,12 +152,9 @@ jobs:
 
           echo "Generated new tag: $NEW_TAG"
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
-      - name: Hello world action
-        with: 
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
-        run:  echo "BOT_TOKEN=$BOT_TOKEN" 
-      - name: Tell me a secret!
-        run: echo "My existing secret is ${{ secrets.BOT_TOKEN }}"      
+
+
+
       - name: Push Git Tag
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
@@ -168,11 +165,4 @@ jobs:
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG         
           echo "BOT_TOKEN:${{ secrets.BOT_TOKEN2 }}"
-          # git push origin $NEW_TAG -u Abisheck2002:$BOT_TOKEN
-          git push origin $NEW_TAG --tags -u Abisheck2002:$BOT_TOKEN
-
-        
-            
-
-         
-                  
+          git push origin $NEW_TAG --tags -u Abisheck2002:${{ secrets.BOT_TOKEN2 }}
