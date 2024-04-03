@@ -159,6 +159,7 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
             NEW_TAG: ${{ steps.generate_tag.outputs.NEW_TAG }}
+            echo "Generated new tag: $NEW_TAG"
         run: |
             git config user.name "Abisheck2002"
             git config user.email "abisheck.g@netxd.com"
