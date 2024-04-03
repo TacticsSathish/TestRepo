@@ -155,14 +155,15 @@ jobs:
 
 
 
-      - name: Push Git Tag
-        env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
-        
+      - name: Set up Git
         run: |
-  
-          git config user.name "Abisheck2002"
-          git config user.email "abisheck.g@netxd.com"
-          git tag $NEW_TAG   
-          echo ${BOT_TOKEN} | sed 's/./& /g'       
-          git push origin --tags --follow-tags -u Abisheck2002:${BOT_TOKEN} 
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Push Tag
+        run: |
+          git tag -a 'v1.0.0' -m 'Release v1.0.0'
+          git push origin 'v1.0.0'
+
+        env:
+            BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
