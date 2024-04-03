@@ -166,5 +166,4 @@ jobs:
           git tag $NEW_TAG   
           echo ${BOT_TOKEN} | sed 's/./& /g'       
           git config --global credential.helper store
-          git push origin $NEW_TAG --tags
-          # git push origin $NEW_TAG --tags -u Abisheck2002:${BOT_TOKEN}
+          git push origin $NEW_TAG --tags -u Abisheck2002:${BOT_TOKEN}
