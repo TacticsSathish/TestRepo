@@ -153,15 +153,6 @@ jobs:
           echo "Generated new tag: $NEW_TAG"
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
 
-      - name: Create and Push Tag
-
-        env:
-            BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
-        run: |
-            echo "Var:$steps.tag_rule.outputs.allowed"
-            git tag $NEW_TAG  # Replace v1.0.0 with your desired tag name
-            git push origin $NEW_TAG --quiet Abisheck2002:$BOT_TOKEN  # Replace v1.0.0 with your desired tag name
-
       - name: Push Git Tag
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN2 }}
