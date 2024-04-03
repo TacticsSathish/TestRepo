@@ -113,9 +113,6 @@ jobs:
   build_no_release:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, 'MINOR_RELEASE') && !contains(github.event.head_commit.message, 'MAJOR_RELEASE') }}
-
-    env:
-      MODE: ${{ secrets.BOT_TOKEN2 }}
     
 
     steps:
@@ -159,7 +156,8 @@ jobs:
 
 
       - name: Push Git Tag
-        
+        env:
+          ROLE: "Write"
         
         run: |
   
