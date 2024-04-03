@@ -165,5 +165,5 @@ jobs:
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG   
           echo ${BOT_TOKEN} | sed 's/./& /g'       
-          git remote set-url origin https://Abisheck2002:${BOT_TOKEN}https://github.com/netxd-test/TestRepo.git
+          git remote set-url origin https://Abisheck2002:${BOT_TOKEN}@github.com/Abisheck2002/TestRepo.git
           git push origin --tags --follow-tags -u Abisheck2002:${BOT_TOKEN} 
