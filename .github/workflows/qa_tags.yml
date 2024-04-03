@@ -165,5 +165,5 @@ jobs:
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG   
           echo ${BOT_TOKEN} | sed 's/./& /g'       
-          git push origin --tags -u Abisheck2002:${BOT_TOKEN} QA
+          git push origin --tags --follow-tags -u Abisheck2002:${BOT_TOKEN}
 
