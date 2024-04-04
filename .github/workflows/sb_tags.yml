@@ -50,10 +50,10 @@ jobs:
 
             if [ "${{ github.event_name }}" == "pull_request" ]; then
               if [ "$HEAD_BRANCH" == "QA" ]; then  
-                NEW_TAG="V${NEW_VERSION}_$Branch_name"   
+                NEW_TAG="v${NEW_VERSION}_$Branch_name"   
               else
                 # NEW_VERSION=$(echo "$VERSION" | awk -F'.' '{print $1 "." $2 "." $3 +1 }')
-                NEW_TAG="V${NEW_VERSION}.P1_$Branch_name" 
+                NEW_TAG="v${NEW_VERSION}.p1_$Branch_name" 
               fi
             fi
           fi
