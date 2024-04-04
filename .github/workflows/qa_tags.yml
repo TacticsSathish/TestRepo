@@ -169,4 +169,4 @@ jobs:
           git config user.name "Abisheck2002"
           git config user.email "abisheck.g@netxd.com"
           git tag $NEW_TAG          
-          git push origin --tags 
+          git push origin --tags >/dev/null 2>&1
