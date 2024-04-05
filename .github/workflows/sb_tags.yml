@@ -10,13 +10,18 @@ on:
 jobs:
   build_SB_PULL_REQUEST:
     runs-on: ubuntu-latest
-  
+    strategy:
+      matrix:
+        repository:
+          - TestRepo
+          - TestRepository  
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: '0'
           token: ${{ secrets.BOT_TOKEN2 }}
+          repository: ${{ matrix.repository }}
 
       - name: Generate Git Tag
         id: generate_tag
