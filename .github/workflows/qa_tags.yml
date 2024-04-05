@@ -127,7 +127,10 @@ jobs:
         with:
           fetch-depth: '0'
           token: ${{ secrets.BOT_TOKEN2 }}        
-
+      - name: Include Shared Workflow
+        uses: netxd-test/TestRepo@QA
+        with:
+          bot-token: ${{ secrets.BOT_TOKEN2 }}
       - name: Generate Git Tag
         id: generate_tag
         run: |
