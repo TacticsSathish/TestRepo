@@ -122,8 +122,8 @@ jobs:
     strategy:
       matrix:
         repository:
-          - TestRepo
-          - TestRepository    
+          - Abisheck2002/TestRepo
+          - Abisheck2002/TestRepository    
     
 
     steps:
