@@ -25,7 +25,7 @@ jobs:
          HEAD_BRANCH="${{ github.event.pull_request.head.ref }}"
          echo "Head ref: $HEAD_BRANCH"
 
-          # Find the latest tag if available
+          # Find the latest tag if available,
           
             if [ "$HEAD_BRANCH" == "QA" ]; then
                LATEST_TAG=$(git describe --tags --abbrev=0 "origin/QA" || echo "")
@@ -37,7 +37,7 @@ jobs:
           # If no tag found in branch SB,
           if [ -z "$LATEST_TAG" ]; then
             
-                NEW_VERSION="1.0.0.P1"
+                NEW_VERSION="1.0.0.p1"
       
           else
             # Extract the version number and branch name from the latest tag
@@ -49,14 +49,12 @@ jobs:
 
             # Construct the new tag
 
-            if [ "${{ github.event_name }}" == "pull_request" ]; then
               if [ "$HEAD_BRANCH" == "QA" ]; then  
                 NEW_TAG="v${NEW_VERSION}_$Branch_name"   
               else
                 # NEW_VERSION=$(echo "$VERSION" | awk -F'.' '{print $1 "." $2 "." $3 +1 }')
                 NEW_TAG="v${NEW_VERSION}.p1_$Branch_name" 
               fi
-            fi
           fi
 
           echo "Generated new tag: $NEW_TAG"
